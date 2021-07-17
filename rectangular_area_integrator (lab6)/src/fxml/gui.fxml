@@ -1,0 +1,36 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.*?>
+
+
+
+<GridPane fx:controller="controller.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <VBox spacing="10" alignment="CENTER">
+
+
+        <ComboBox fx:id="equationChooser" prefHeight="30" prefWidth="390" promptText="Двойной интеграл:"/>
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="xLeft" prefHeight="30" prefWidth="90" promptText="x от" alignment="CENTER"/>
+            <TextField fx:id="xRight" prefHeight="30" prefWidth="90" promptText="x до" alignment="CENTER"/>
+            <TextField fx:id="xCount" prefHeight="30" prefWidth="90" promptText="узлов по x" alignment="CENTER"/>
+            <TextField fx:id="accuracy" prefHeight="30" prefWidth="90" promptText="точность" alignment="CENTER"/>
+        </HBox>
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="yLeft" prefHeight="30" prefWidth="90" promptText="y от" alignment="CENTER"/>
+            <TextField fx:id="yRight" prefHeight="30" prefWidth="90" promptText="y до" alignment="CENTER"/>
+            <TextField fx:id="yCount" prefHeight="30" prefWidth="90" promptText="узлов по y" alignment="CENTER"/>
+        </HBox>
+        <Button prefHeight="30" prefWidth="390" text="Подтвердить" onAction="#inputSubmit" />
+
+        <TextArea fx:id="log" prefHeight="60" prefWidth="390" promptText="Program Log"/>
+        <TextArea fx:id="answer" prefHeight="80" prefWidth="390" promptText="Answer Log"/>
+
+    </VBox>
+
+
+</GridPane>

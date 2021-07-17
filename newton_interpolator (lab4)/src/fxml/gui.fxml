@@ -1,0 +1,66 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableView?>
+
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TextArea?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.effect.Bloom?>
+
+
+
+<GridPane fx:controller="controllers.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <VBox spacing="10" alignment="CENTER">
+        <HBox alignment="CENTER">
+            <VBox alignment="CENTER" spacing="10">
+
+                <ComboBox fx:id="functionChooser" prefHeight="30" prefWidth="300" promptText="Функция:"/>
+                <HBox spacing="10">
+                    <TextField fx:id="leftPoint" prefHeight="30" prefWidth="93" promptText="Левая точка"/>
+                    <TextField fx:id="rightPoint" prefHeight="30" prefWidth="93" promptText="Правая точка"/>
+                    <TextField fx:id="pointsCount" prefHeight="30" prefWidth="93" promptText="Количество"/>
+                </HBox>
+                <Button prefHeight="30" prefWidth="300" text="Подтвердить" onAction="#inputSubmit"/>
+                <TableView fx:id="pointsTable" editable="true" prefHeight="200.0" prefWidth="300.0"/>
+
+            </VBox>
+
+            <VBox maxHeight="400">
+                <LineChart fx:id="canvas" prefHeight="548.0" prefWidth="576.0" title="y = ƒ(x)"
+                           BorderPane.alignment="CENTER" legendVisible="false" xmlns:fx="http://javafx.com/fxml" >
+                    <xAxis>
+                        <NumberAxis label="x" side="BOTTOM"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="y" side="LEFT"/>
+                    </yAxis>
+                </LineChart>
+            </VBox>
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10">
+            <TextField fx:id="inputX" prefHeight="30" prefWidth="100" promptText="X:"/>
+            <Button fx:id="calcY" prefHeight="30" prefWidth="100" text="Посчитать" onAction="#calcY"/>
+            <TextField fx:id="outputY" prefHeight="30" prefWidth="100" promptText="Y:"/>
+            <TextArea fx:id="calcComment" maxHeight="30" prefWidth="200" promptText="Комментарий"/>
+        </HBox>
+
+        <TextArea fx:id="log" prefHeight="120" prefWidth="600" promptText="Program Log"/>
+
+    </VBox>
+
+
+</GridPane>

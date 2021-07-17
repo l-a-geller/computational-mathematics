@@ -1,0 +1,96 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+
+<GridPane fx:controller="controllers.EquationChoiceController"
+          xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10" vgap="10">
+
+        <VBox>
+
+            <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="62.0" prefHeight="134.0" prefWidth="140.0" spacing="8.0">
+                <Label fx:id="chooseTitle" layoutX="15.0" layoutY="10.0" text="Решить уравнение или систему уравнений?"/>
+                <ComboBox fx:id="typeChoice" layoutX="15.0" layoutY="33.0" prefWidth="180.0" />
+            </VBox>
+
+
+            <StackPane prefHeight="230">
+                <VBox fx:id="equation" visible="false" spacing="30" prefHeight="230">
+
+                    <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="62.0" prefHeight="100" prefWidth="140.0" spacing="8.0">
+                        <Label fx:id="mainTitle" layoutX="15.0" layoutY="10.0" text="Выберите тип уравнения"/>
+                        <ComboBox fx:id="equationChoice" layoutX="15.0" layoutY="33.0" prefWidth="180.0" />
+                    </VBox>
+
+                    <StackPane prefHeight="100">
+                        <VBox fx:id="exponential" visible="false" alignment="TOP_CENTER" layoutX="14.0" layoutY="62.0" prefHeight="100" prefWidth="240.0" spacing="8.0">
+                            <Label layoutX="15.0" layoutY="10.0" text="Выберите степенное уравнение"/>
+                            <ComboBox fx:id="exponentialEquationChoice" layoutX="15.0" layoutY="33.0" prefWidth="180.0" promptText="choose"/>
+                        </VBox>
+
+                        <VBox fx:id="logarithmic" visible="false" alignment="TOP_CENTER" layoutX="14.0" layoutY="62.0" prefHeight="100" prefWidth="240.0" spacing="8.0">
+                            <Label layoutX="15.0" layoutY="10.0" text="Выберите логарифмичесое уравнение"/>
+                            <ComboBox fx:id="logarithmicEquationChoice" layoutX="15.0" layoutY="33.0" prefWidth="180.0" promptText="choose"/>
+                        </VBox>
+
+                        <VBox fx:id="trigonometric" visible="false" alignment="TOP_CENTER" layoutX="14.0" layoutY="62.0" prefHeight="100" prefWidth="240.0" spacing="8.0">
+                            <Label layoutX="15.0" layoutY="10.0" text="Выберите тригонометрическое уравнение"/>
+                            <ComboBox fx:id="trigonometricEquationChoice" layoutX="15.0" layoutY="33.0" prefWidth="180.0" promptText="choose"/>
+                        </VBox>
+                    </StackPane>
+
+                </VBox>
+
+                <StackPane fx:id="system" visible="false">
+                    <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="62.0" prefHeight="100" prefWidth="140.0" spacing="8.0">
+                        <Label layoutX="15.0" layoutY="10.0" text="Выберите систему уравнений"/>
+                        <ComboBox fx:id="systemDimensionChoice" layoutX="15.0" layoutY="33.0" prefWidth="180.0" />
+                        <StackPane>
+                            <VBox fx:id="system1" visible="false" alignment="CENTER">
+                                <Label layoutX="15.0" layoutY="10.0" text="cos(x-1) + y = 0.5"/>
+                                <Label layoutX="15.0" layoutY="10.0" text="x + cos(y) = 3"/>
+                            </VBox>
+                            <VBox fx:id="system2" visible="false" alignment="CENTER">
+                                <Label layoutX="15.0" layoutY="10.0" text="sin(x-1) + y = 1.5"/>
+                                <Label layoutX="15.0" layoutY="10.0" text="x - sin(y+1) = 1"/>
+                            </VBox>
+                            <VBox fx:id="system3" visible="false" alignment="CENTER">
+                                <Label layoutX="15.0" layoutY="10.0" text="tg(x-1) + 3y = 0.5"/>
+                                <Label layoutX="15.0" layoutY="10.0" text="4x - cos(y) = 0.6"/>
+                            </VBox>
+                        </StackPane>
+                    </VBox>
+                </StackPane>
+
+            </StackPane>
+
+            <VBox alignment="CENTER" spacing="10">
+                <HBox spacing="10" fx:id="aBorderEnter" visible="false">
+                    <Label layoutX="15.0" layoutY="10.0" text="Левая граница отрезка поиска корней"/>
+                    <TextField fx:id="aBorder" layoutX="15.0" layoutY="10.0"/>
+                </HBox>
+                <HBox spacing="10" fx:id="bBorderEnter" visible="false">
+                    <Label layoutX="15.0" layoutY="10.0" text="Правая граница отрезка поиска корней"/>
+                    <TextField fx:id="bBorder" layoutX="15.0" layoutY="10.0"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label layoutX="15.0" layoutY="10.0" text="Точность"/>
+                    <TextField fx:id="epsilon" layoutX="15.0" layoutY="10.0"/>
+                </HBox>
+                <Button fx:id="submit" prefHeight="15.0" prefWidth="100.0" text="Решить" alignment="CENTER" />
+                <TextArea fx:id="resultArea" prefHeight="100" prefWidth="300"/>
+                <Button fx:id="showGraph" visible="false" prefHeight="15.0" prefWidth="180.0" text="Показать график" alignment="CENTER" />
+
+            </VBox>
+
+        </VBox>
+
+
+
+</GridPane>
